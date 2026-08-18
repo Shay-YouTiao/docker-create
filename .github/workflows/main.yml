@@ -22,10 +22,10 @@ jobs:
           submodules: recursive
 
       - name: Copy clamav-arm64 Dockerfile to clamav
-        run: cp ./clamav-arm64/Dockerfile ./clamav/Dockerfile
+        run: cp ./Dockerfile ./clamav/Dockerfile
 
       - name: Copy clamav-docker scripts to clamav
-        run: cp -r ./clamav-docker/clamav/1.0/alpine/scripts ./clamav/scripts
+        run: cp -r ./scripts ./clamav/scripts
 
       - name: Expose GitHub Runtime
         uses: crazy-max/ghaction-github-runtime@v2
