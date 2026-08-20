@@ -78,3 +78,9 @@ jobs:
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
             VERSION_ARG=${{ steps.meta.outputs.version }}
+      - name: Copy from container to host
+        uses: tj-actions/docker-cp@v2
+        with:
+          container: ${{ steps.meta.outputs.tags }}
+          source: /home/admin/libqt-wl-bridge.so
+          destination: libqt-wl-bridge.so
