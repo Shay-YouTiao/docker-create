@@ -32,3 +32,4 @@ g++ -shared -fPIC \
 echo "✓ $(ls -la $SCRIPT_DIR/libqt-wl-bridge.so)"
 
 nm -D "$SCRIPT_DIR/libqt-wl-bridge.so" | grep 'qt_wl_'
+mv "$SCRIPT_DIR/libqt-wl-bridge.so" "/home/admin/libqt-wl-bridge.so"
