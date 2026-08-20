@@ -18,7 +18,16 @@ RUN apk update && apk upgrade \
   g++ \
   libtool \
   linux-headers \
-  make 
+  make libqt6gui6t64 libqt6core6t64 -y 
+RUN addgroup --gid 2000 admin \
+    && adduser \
+    --uid 1234 \
+    --ingroup admin \
+    --gecos ""\
+    --disabled-password \
+    admin \
+    && usermod -aG shadow admin  
 COPY build_bridge.sh /build_bridge.sh
 RUN chmod +x /build_bridge.sh 
-CMD ["/build_bridge.sh"]
+RUN ./build_bridge.sh
+
