@@ -1,5 +1,5 @@
 # Base image Ubuntu_22_x64
-FROM arm64v8/ubuntu:22.04
+FROM ubuntu:22.04
 SHELL ["/bin/bash", "-c"]
 # Install dependencies first and clean up in same layer
 RUN apt-get update \
